@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="assets/css/login.css">
+  <style>
+    /* Additional styling for body */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="login-toggle">
+      <button id="userToggle">User Login</button>
+      <button id="adminToggle">Admin Login</button>
+    </div>
+
+    <!-- User Login Form -->
+    <form class="login-form user-login" action="#" method="post">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <button type="submit" class="login-button">Login</button>
+    </form>
+
+    <!-- Admin Login Form (Initially Hidden) -->
+    <form class="login-form admin-login" action="#" method="post" style="display: none;">
+      <div class="form-group">
+        <label for="admin-username">Admin Username:</label>
+        <input type="text" id="admin-username" name="admin-username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="admin-password">Admin Password:</label>
+        <input type="password" id="admin-password" name="admin-password" required>
+      </div>
+
+      <button type="submit" class="login-button">Login as Admin</button>
+    </form>
+  </div>
+
+  <script>
+    // Toggle between user and admin login forms
+    document.getElementById('userToggle').addEventListener('click', function () {
+      document.querySelector('.user-login').style.display = 'flex';
+      document.querySelector('.admin-login').style.display = 'none';
+    });
+
+    document.getElementById('adminToggle').addEventListener('click', function () {
+      document.querySelector('.user-login').style.display = 'none';
+      document.querySelector('.admin-login').style.display = 'flex';
+    });
+  </script>
+</body>
+
+</html>
