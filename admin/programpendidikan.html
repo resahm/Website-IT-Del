@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabel Program Pendidikan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #80aec0;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+
+    .form-container {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 8px;
+      background-color: #7d92af;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .browse {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .record-search {
+      width: 100%;
+      padding: 8px;
+      margin-right: 10px;
+      box-sizing: border-box;
+    }
+
+    select {
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #31579a;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .action-column {
+      width: 80px;
+    }
+
+    .action-button {
+      padding: 5px;
+      margin-right: 5px;
+    }
+
+    @media (max-width: 600px) {
+      table {
+        width: 800px;
+      }
+
+      .table-container {
+        overflow-x: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Program Pendidikan</h1>
+    <div class="form-container">
+      <label for="fakultasInput">Nama Fakultas:</label>
+      <input type="text" id="fakultasInput">
+      <button onclick="addFakultas()">Tambah Fakultas</button>
+    </div>
+  
+    <!-- Additional Browse and Search Elements -->
+    <div class="browse">
+      <input type="search" placeholder="Search" class="record-search" oninput="searchFakultas()">
+      <select name="" id="">
+        <option value="">Fakultas</option>
+      </select>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 165px;"><span class="las la-sort"></span> Fakultas</th>
+            <th style="width: 200px;"><span class="las la-sort"></span> Daftar Prodi</th>
+            <th style="width: 550px;"><span class="las la-sort"></span> DESKRIPSI</th>
+            <th style="width: 90px;"><span class="las la-sort"></span> ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Isi tabel akan di-generate melalui JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi data fakultas dan program studi
+    const data = [
+      { fakultas: "Fakultas Informatika dan Teknik Elektro", prodi: ["S1 Informatika", "S1 Sistem Informasi", "S1 Teknik Elektro"], deskripsi: "Fakultas Teknik Informatika dan Elektro (FITE) IT Del berdiri pada tahun 2013 seiring dengan perubahan Politeknik Informatika Del (PI Del) menjadi IT Del."},
+      { fakultas: "Fakultas Vokasi", prodi: ["D3 Teknologi Informasi", "D3 Teknologi Komputer", "S1 Teknologi Rekayasa Perangkat Lunak"], deskripsi: "Pendidikan vokasi merupakan jenjang pendidikan pertama di Institut Teknologi Del sejak berdiri pada tahun 2001 (dahulu bernama Politeknik Informatika Del). Vokasi merupakan pendidikan tinggi dengan fokus pada praktik kerja yang dapat menunjang keahlian di bidang studi tertentu. Program vokasi bertujuan mempersiapkan lulusannya menjadi tenaga yang siap kerja dan mampu bersaing secara global di Dunia Usaha dan Dunia Industri (DUDI)." },
+      { fakultas: "Fakultas Tenik Industri", prodi: ["S1 Manajemen Rekayasa", "S1 Teknik Metalurgi"], deskripsi: "Manajemen Rekayasa (Engineering Management) adalah penggabungan dari keilmuan teknik/rekayasa (engineering) dengan ilmu manajemen yang diaplikasikan untuk menyelesaikan persoalan-persoalan dalam suatu sistem kompleks.  Aspek keilmuan teknik (engineering) dari Manajemen Rekayasa terlihat melalui  penerapan matematika dan ilmu pengetahuan alam yang diperoleh melalui pembelajaran, pengalaman, dan praktek empiris untuk menemukan cara-cara yang optimal dalam memanfaatkan material dan sumber daya lain dalam mengembangkan teknologi. Aspek keilmuan manajemen dari Manajemen Rekayasa muncul dalam penerapan ilmu-ilmu pendukung keputusan yang dapat diaplikasikan dalam aktivitas-aktivitas pengembangan organisasi dalam mencapai tujuannya, yang diperoleh melalui pembelajaran dan praktek empiris dalam ilmu perilaku organisasi, analisa finansial, manajemen sumber daya manusia, dan analisa keputusan." },
+      { fakultas: "Fakultas Bioteknologi", prodi: ["S1 Bioproses"], deskripsi: "program studi Sarjana Teknik Bioproses menjadi program studi yang unggul secara nasional dan internasional dalam bidang pendidikan, penelitian, pengembangan dan penerapan ilmu dan teknologi, serta pengabdian kepada masyarakat." }
+      // Tambahkan data sesuai kebutuhan
+    ];
+
+    // Ambil elemen tbody dari tabel
+    const tbody = document.querySelector('tbody');
+
+    // Tambahkan data ke tabel
+    data.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td rowspan="${item.prodi.length}">${item.fakultas}</td><td>${item.prodi[0]}</td><td rowspan="${item.prodi.length}">${item.deskripsi}</td><td class="action-column"><button class="action-button" onclick="editRow(this)">Edit</button><button class="action-button" onclick="deleteRow(this)">Delete</button></td>`;
+      tbody.appendChild(row);
+
+      for (let i = 1; i < item.prodi.length; i++) {
+        const subRow = document.createElement('tr');
+        subRow.innerHTML = `<td>${item.prodi[i]}</td><td class="action-column"><button class="action-button" onclick="editRow(this)">Edit</button><button class="action-button" onclick="deleteRow(this)">Delete</button></td>`;
+        tbody.appendChild(subRow);
+      }
+    });
+
+    // Fungsi untuk edit data (belum diimplementasikan)
+    function editRow(button) {
+      alert('Edit button clicked');
+    }
+
+    // Fungsi untuk hapus data (belum diimplementasikan)
+    function deleteRow(button) {
+      alert('Delete button clicked');
+    }
+  </script>
+
+</body>
+</html>
