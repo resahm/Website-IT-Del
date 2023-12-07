@@ -46,7 +46,7 @@
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #7b907c;
     }
 
     .browse {
@@ -83,7 +83,7 @@
     }
 
     th {
-      background-color: #31579a;
+      background-color: #34425A;
       color: white;
     }
 
@@ -121,7 +121,6 @@
       <button onclick="addFakultas()">Tambah Fakultas</button>
     </div>
   
-    <!-- Additional Browse and Search Elements -->
     <div class="browse">
       <input type="search" placeholder="Search" class="record-search" oninput="searchFakultas()">
       <select name="" id="">
@@ -140,26 +139,21 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Isi tabel akan di-generate melalui JavaScript -->
         </tbody>
       </table>
     </div>
   </div>
 
   <script>
-    // Inisialisasi data fakultas dan program studi
     const data = [
       { fakultas: "Fakultas Informatika dan Teknik Elektro", prodi: ["S1 Informatika", "S1 Sistem Informasi", "S1 Teknik Elektro"], deskripsi: "Fakultas Teknik Informatika dan Elektro (FITE) IT Del berdiri pada tahun 2013 seiring dengan perubahan Politeknik Informatika Del (PI Del) menjadi IT Del."},
       { fakultas: "Fakultas Vokasi", prodi: ["D3 Teknologi Informasi", "D3 Teknologi Komputer", "S1 Teknologi Rekayasa Perangkat Lunak"], deskripsi: "Pendidikan vokasi merupakan jenjang pendidikan pertama di Institut Teknologi Del sejak berdiri pada tahun 2001 (dahulu bernama Politeknik Informatika Del). Vokasi merupakan pendidikan tinggi dengan fokus pada praktik kerja yang dapat menunjang keahlian di bidang studi tertentu. Program vokasi bertujuan mempersiapkan lulusannya menjadi tenaga yang siap kerja dan mampu bersaing secara global di Dunia Usaha dan Dunia Industri (DUDI)." },
       { fakultas: "Fakultas Tenik Industri", prodi: ["S1 Manajemen Rekayasa", "S1 Teknik Metalurgi"], deskripsi: "Manajemen Rekayasa (Engineering Management) adalah penggabungan dari keilmuan teknik/rekayasa (engineering) dengan ilmu manajemen yang diaplikasikan untuk menyelesaikan persoalan-persoalan dalam suatu sistem kompleks.  Aspek keilmuan teknik (engineering) dari Manajemen Rekayasa terlihat melalui  penerapan matematika dan ilmu pengetahuan alam yang diperoleh melalui pembelajaran, pengalaman, dan praktek empiris untuk menemukan cara-cara yang optimal dalam memanfaatkan material dan sumber daya lain dalam mengembangkan teknologi. Aspek keilmuan manajemen dari Manajemen Rekayasa muncul dalam penerapan ilmu-ilmu pendukung keputusan yang dapat diaplikasikan dalam aktivitas-aktivitas pengembangan organisasi dalam mencapai tujuannya, yang diperoleh melalui pembelajaran dan praktek empiris dalam ilmu perilaku organisasi, analisa finansial, manajemen sumber daya manusia, dan analisa keputusan." },
       { fakultas: "Fakultas Bioteknologi", prodi: ["S1 Bioproses"], deskripsi: "program studi Sarjana Teknik Bioproses menjadi program studi yang unggul secara nasional dan internasional dalam bidang pendidikan, penelitian, pengembangan dan penerapan ilmu dan teknologi, serta pengabdian kepada masyarakat." }
-      // Tambahkan data sesuai kebutuhan
     ];
 
-    // Ambil elemen tbody dari tabel
     const tbody = document.querySelector('tbody');
 
-    // Tambahkan data ke tabel
     data.forEach(item => {
       const row = document.createElement('tr');
       row.innerHTML = `<td rowspan="${item.prodi.length}">${item.fakultas}</td><td>${item.prodi[0]}</td><td rowspan="${item.prodi.length}">${item.deskripsi}</td><td class="action-column"><button class="action-button" onclick="editRow(this)">Edit</button><button class="action-button" onclick="deleteRow(this)">Delete</button></td>`;
@@ -172,12 +166,10 @@
       }
     });
 
-    // Fungsi untuk edit data (belum diimplementasikan)
     function editRow(button) {
       alert('Edit button clicked');
     }
 
-    // Fungsi untuk hapus data (belum diimplementasikan)
     function deleteRow(button) {
       alert('Delete button clicked');
     }
