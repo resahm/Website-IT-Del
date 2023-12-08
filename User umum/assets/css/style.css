@@ -4,7 +4,7 @@ body {
 }
 
 a {
-  color: #131415;
+  color: #e8ebee;
   text-decoration: none;
 }
 
@@ -22,9 +22,7 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
+/* Back to top button */
 .back-to-top {
   position: fixed;
   visibility: hidden;
@@ -55,18 +53,14 @@ h6 {
   opacity: 1;
 }
 
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
+/* Disable aos animation delay on mobile devices */
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+/* Header */
 #header {
   height: 70px;
   transition: all 0.5s;
@@ -102,26 +96,30 @@ h6 {
   }
 }
 
+/* Add this style to make the logo smaller */
+.logo img.small-logo {
+  width: 50px; 
+  height: 90px;
+}
+
+/* Add flex styles to align logo and text horizontally */
 .logo-container {
   display: flex;
   align-items: center;
 }
 
-.logo h3 {
-  margin-right: 10px;
+/* Add some spacing between the logo and text */
+.text {
+  margin-left: 10px; 
 }
 
-.subtitles {
-  font-size: 14px;
-  color: #888;
+/* Add some spacing between the text and subtitles */
+.text p {
+  margin-top: 5px;
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/**
-* Desktop Navigation 
-*/
+/* Navigation Menu */
+/* Desktop Navigation */
 .navbar {
   padding: 0;
 }
@@ -254,9 +252,7 @@ h6 {
   }
 }
 
-/**
-* Mobile Navigation 
-*/
+/* Mobile Navigation */
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -305,68 +301,49 @@ h6 {
   background-color: #fff;
   overflow-y: auto;
   transition: 0.3s;
-}
-
-.navbar-mobile>ul>li+li {
-  margin: 0;
-}
-
-.navbar-mobile a:hover:before,
-.navbar-mobile li:hover>a:before,
-.navbar-mobile .active:before {
-  visibility: hidden;
+  z-index: 1;
 }
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
-  padding: 10px 20px;
-  font-size: 15px;
-  color: #21413c;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #062822;
+  font-weight: 500;
 }
 
 .navbar-mobile a:hover,
-.navbar-mobile .active,
+.navbar-mobile .active>a,
 .navbar-mobile li:hover>a {
-  color: #1bac91;
-}
-
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
-  margin: 15px;
+  color: #306C73;
 }
 
 .navbar-mobile .dropdown ul {
   position: static;
   display: none;
-  margin: 10px 20px;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.navbar-mobile .dropdown>ul {
+  display: block;
 }
 
 .navbar-mobile .dropdown ul li {
-  min-width: 200px;
+  padding-left: 20px;
 }
 
-.navbar-mobile .dropdown ul a {
-  padding: 10px 20px;
+.navbar-mobile .dropdown .dropdown ul {
+  display: none;
 }
 
-.navbar-mobile .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
-  color: #004bbc;
-}
-
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown .dropdown>ul {
   display: block;
+}
+
+.navbar-mobile .dropdown .dropdown ul a {
+  padding-left: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -549,23 +526,15 @@ section {
 /*--------------------------------------------------------------
 #Pengumuman
 --------------------------------------------------------------*/
-#pengumuman {
+#pengumuman-content {
+  padding: 20px; 
   background-color: #f8f9fa; 
-  padding: 60px 0; 
-}
-
-#pengumuman h3 {
-  font-size: 32px;
-  color: #007bff; 
-}
-
-#pengumuman p {
-  font-size: 18px;
-  color: #6c757d; 
-}
-
-#pengumuman img {
   border-radius: 8px; 
+}
+
+.tanggal {
+  font-style: italic;
+  color: #6c757d; 
 }
 
 /*--------------------------------------------------------------
@@ -692,114 +661,129 @@ section {
 /*--------------------------------------------------------------
 #Lembaga Kampus
 --------------------------------------------------------------*/
-
-#lembaga {
-  padding: 60px 0;
+/* Add styles to highlight active tab */
+.nav-tabs .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
 }
 
-.lembaga-slider {
-  position: relative;
+/* Add styles to customize the appearance of the tab content */
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.lembaga-item {
-  text-align: center;
-  padding: 30px;
+.tab-pane {
+  display: none;
 }
 
-.lembaga-item p {
-  font-style: italic;
-  font-size: 18px;
-  color: #666;
+.tab-pane.active {
+  display: block;
 }
 
-.lembaga-img {
-  margin-top: 20px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #00bcd4;
+/* Add styles for the section title */
+.section-title {
+  margin-bottom: 20px;
 }
 
-.lembaga-item h3 {
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.lembaga-item h4 {
-  font-size: 18px;
-  color: #777;
+/* Style for the images inside tab content */
+.tab-pane img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 5px;
   margin-top: 10px;
 }
 
-/* Lembaga Slider Pagination */
-.swiper-pagination {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
+/* Style for the details inside tab content */
+.tab-pane .details {
+  margin-bottom: 20px;
 }
 
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background-color: #ddd;
-  display: inline-block;
-  margin: 0 8px;
-  border-radius: 50%;
-  cursor: pointer;
+/* Style for the Dekan info in tab content */
+.tab-pane .dekan-info {
+  margin-bottom: 20px;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #00bcd4;
+/* Style for the unordered list in tab content */
+.tab-pane ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style for the list items in tab content */
+.tab-pane ul li {
+  margin-bottom: 5px;
 }
 
 /*--------------------------------------------------------------
-# Fasilitas
+#Fasilitas
 --------------------------------------------------------------*/
-
-#fasilitas {
-  padding: 60px 0;
+#fasilitas .section-title {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+/* Style untuk filter Fasilitas */
+#fasilitas-flters {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#fasilitas-flters li {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #007bff;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#fasilitas-flters li:hover,
+#fasilitas-flters li.filter-active {
+  background: #0056b3;
+}
+
+/* Style untuk container fasilitas */
 .fasilitas-container {
-  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Style untuk item fasilitas */
 .fasilitas-item {
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .fasilitas-wrap {
   position: relative;
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk gambar fasilitas */
+.fasilitas-wrap img {
+  width: 100%;
+  height: auto;
   transition: transform 0.3s ease-in-out;
 }
 
-.fasilitas-wrap:hover {
-  transform: scale(1.05);
+.fasilitas-wrap:hover img {
+  transform: scale(1.1);
 }
 
-.fasilitas-wrap img {
-  width: 100%;
-  border-radius: 5px;
-}
-
+/* Style untuk informasi fasilitas */
 .fasilitas-info {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
   color: #fff;
-  display: none;
-}
-
-.fasilitas-wrap:hover .fasilitas-info {
-  display: block;
 }
 
 .fasilitas-info h4 {
@@ -807,82 +791,27 @@ section {
   margin-bottom: 10px;
 }
 
+.fasilitas-info p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Style untuk link fasilitas */
 .fasilitas-links {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
 }
 
 .fasilitas-links a {
-  color: #fff;
+  display: inline-block;
   font-size: 20px;
+  color: #fff;
   margin: 0 10px;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
 .fasilitas-links a:hover {
-  color: #00bcd4;
-}
-
-/* Fasilitas Filters */
-#fasilitas-flters {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-}
-
-#fasilitas-flters li {
-  cursor: pointer;
-  display: inline-block;
-  margin: 15px 15px 0 0;
-  font-size: 18px;
-  color: #5f5f5f;
-  transition: color 0.3s;
-}
-
-#fasilitas-flters li:hover {
-  color: #00bcd4;
-}
-
-#fasilitas-flters .filter-active {
-  color: #00bcd4;
-}
-
-/* Lightbox Styles */
-.fasilitas-lightbox {
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 999;
-}
-
-.fasilitas-lightbox img {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-.fasilitas-lightbox i {
-  font-size: 50px;
-  color: #fff;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-/* Media Query for Responsive Design */
-@media (max-width: 768px) {
-  .fasilitas-wrap {
-    margin-bottom: 15px;
-  }
+  color: #0056b3;
 }
 
 /*--------------------------------------------------------------
