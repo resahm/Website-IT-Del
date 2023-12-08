@@ -54,6 +54,7 @@
       }
     });
   };
+
   window.addEventListener("load", () => {
     AOS.init({
       duration: 1000,
@@ -61,88 +62,112 @@
       once: true,
       mirror: false,
     });
-  });
 
-  new Swiper(".testimonials-slider", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
+    new Swiper(".testimonials-slider", {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
       },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+      slidesPerView: "auto",
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
       },
-    },
-  });
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
 
-  window.addEventListener("load", () => {
-    let programContainer = select(".program-container"); // Change to your actual class name
-    if (programContainer) {
-      let programIsotope = new Isotope(programContainer, { // Change to your actual class name
-        itemSelector: ".program-item", // Change to your actual class name
-        layoutMode: "fitRows",
+    window.addEventListener("load", () => {
+      let programContainer = select(".program-container");
+      if (programContainer) {
+        let programIsotope = new Isotope(programContainer, {
+          itemSelector: ".program-item",
+          layoutMode: "fitRows",
+        });
+
+        let programFilters = select("#program-flters li", true);
+
+        on("click", "#program-flters li", function (e) {
+          e.preventDefault();
+          programFilters.forEach(function (el) {
+            el.classList.remove("filter-active");
+          });
+          this.classList.add("filter-active");
+
+          programIsotope.arrange({
+            filter: this.getAttribute("data-filter"),
+          });
+          programIsotope.on("arrangeComplete", function () {
+            AOS.refresh();
+          });
+        }, true);
+      }
+    });
+
+    const programLightbox = GLightbox({
+      selector: ".program-lightbox",
+    });
+
+    new Swiper(".program-details-slider", {
+      speed: 400,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+    });
+
+    /**
+     * Animation on scroll
+     */
+    window.addEventListener("load", () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
       });
-
-      let programFilters = select("#program-flters li", true); // Change to your actual id name
-
-      on("click", "#program-flters li", function (e) { // Change to your actual id name
-        e.preventDefault();
-        programFilters.forEach(function (el) {
-          el.classList.remove("filter-active");
-        });
-        this.classList.add("filter-active");
-
-        programIsotope.arrange({
-          filter: this.getAttribute("data-filter"),
-        });
-        programIsotope.on("arrangeComplete", function () {
-          AOS.refresh();
-        });
-      }, true);
-    }
+    });
   });
 
-  const programLightbox = GLightbox({
-    selector: ".program-lightbox", // Change to your actual class name
-  });
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('#fasilitas-flters li');
+    const fasilitasItems = document.querySelectorAll('.fasilitas-item');
 
-  new Swiper(".program-details-slider", { // Change to your actual class name
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Remove the 'filter-active' class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+        // Add the 'filter-active' class to the clicked button
+        this.classList.add('filter-active');
 
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener("load", () => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
+        const filterValue = this.getAttribute('data-filter');
+
+        // Show or hide items based on the clicked button
+        fasilitasItems.forEach(item => {
+          if (filterValue === '*' || item.classList.contains(filterValue)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
     });
   });
 })();
