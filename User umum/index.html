@@ -23,21 +23,37 @@
 
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/js/script.js" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-rq7g3MEVxn5pgF5LcK6ZjsL+K2U5x8HKLvaUT4d+BFncazUvkgkDKGc3iJOMWj4" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-GLhlTQ8iKuO7u6z69MlVfeF7f5GxjMezn0nEULF/O+0aB/PQGmWAsdFVMEaQh" crossorigin="anonymous"></script>
+  <style>
+    .navbar a.underline::after {
+      content: '';
+      display: block;
+      border-bottom: 3px solid #007bff; 
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
+
+    .navbar a.underline:hover::after,
+    .navbar a.underline.active::after {
+      transform: scaleX(1);
+    }
+  </style>
 
 </head>
 
 <body>
-
- <!-- ======= Header ======= -->
+<!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
   <div class="container d-flex justify-content-between">
 
     <!-- Logo and Text -->
-    <div class="logo-container d-flex align-items-center">
+    <div class="logo-container">
       <div class="logo">
-        <h4><strong><a href="index.html">Institut Teknologi Del</a></strong></h4>
+        <img src="assets/img/apple-touch-icon.png" alt="Logo Institut Teknologi Del" class="small-logo">
       </div>
-      <div class="subtitles">
+      <div class="text">
+        <h4><strong><a href="index.html" class="underline">Institut Teknologi Del</a></strong></h4>
         <p>MarTuhan, Marroha, Marbisuk</p>
       </div>
     </div>
@@ -45,79 +61,88 @@
     <!-- Navbar -->
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-        <li><a class="nav-link scrollto" href="#Pengumuman">Pengumuman</a></li>
+        <li><a class="nav-link scrollto underline" href="#hero">Beranda</a></li>
+        <li><a class="nav-link scrollto underline" href="#Pengumuman">Pengumuman</a></li>
         <li class="dropdown">
-          <a href="#ProgramPendidikan"><span>Program Pendidikan</span> <i class="bi bi-chevron-down"></i></a>
+          <a href="#ProgramPendidikan" class="underline"><span>Program Pendidikan</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#ProgramPendidikan">Fakultas Informatika & Teknik Elektro</a></li>
-            <li><a href="#ProgramPendidikan">Fakultas Vokasi</a></li>
-            <li><a href="#ProgramPendidikan">Fakultas Bioteknologi</a></li>
-            <li><a href="#ProgramPendidikan">Fakultas Teknologi Industri</a></li>
+            <li><a href="#ProgramPendidikan" class="underline">Fakultas Informatika & Teknik Elektro</a></li>
+            <li><a href="#ProgramPendidikan" class="underline">Fakultas Vokasi</a></li>
+            <li><a href="#ProgramPendidikan" class="underline">Fakultas Bioteknologi</a></li>
+            <li><a href="#ProgramPendidikan" class="underline">Fakultas Teknologi Industri</a></li>
           </ul>
-        </li>
-        <li><a class="nav-link scrollto" href="#Lembaga">Lembaga</a></li>
-        <li class="dropdown">
-          <a href="#Fasilitas"><span>Fasilitas</span> <i class="bi bi-chevron-down"></i></a>
-          <ul>
-            <li><a href="#">Laboratorium & Kelas</a></li>
-            <li><a href="#">Akomodasi</a></li>
-            <li><a href="#">Kantin</a></li>
-            <li><a href="#">Perpustakaan</a></li>
-            <li><a href="#">Hiburan & Olahraga</a></li>
-            <li><a href="#">Ruang Terbuka</a></li>
-            <li><a href="#">Klinik</a></li>
-          </ul>
-        </li>
-        <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-        <li><a class="nav-link scrollto" href="Login.html">Masuk</a></li>
-        <li><a class="nav-link scrollto" href="Register.html">Daftar</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+          </li>
+          <li><a class="nav-link scrollto underline" href="#Lembaga">Lembaga</a></li>
+          <li class="dropdown">
+            <a href="#Fasilitas" class="underline"><span>Fasilitas</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#Failitas" class="underline">Laboratorium & Kelas</a></li>
+              <li><a href="#Fasilitas" class="underline">Akomodasi</a></li>
+              <li><a href="#Fasilitas" class="underline">Kantin</a></li>
+              <li><a href="#Fasilitas" class="underline">Perpustakaan</a></li>
+              <li><a href="#Fasilitas" class="underline">Hiburan & Olahraga</a></li>
+              <li><a href="#Fasilitas" class="underline">Ruang Terbuka</a></li>
+              <li><a href="#Fasilitas" class="underline">Klinik</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto underline" href="#contact">Kontak</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
 
-  </div>
-</header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Institut Teknologi Del</h1>
-      <a href="#Pengumuman" class="btn-get-started scrollto">Get Started</a>
     </div>
-  </section>
-  <!-- End Hero -->
+  </header>
+  <!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="100">
+    <h1><span>Institut Teknologi Del</span></h1>
+    <h2>MarTuhan, Marroha, Marbisuk</h2>
+    <a href="#ProgramPendidikan" class="btn-get-started scrollto">Jelajahi</a>
+  </div>
+</section>
+<!-- End Hero Section -->
 
   <main id="main">
 
-    <!-- ======= Pengumuman Section ======= -->
-    <section id="pengumuman" class="pengumuman">
-      <div class="container">
-  
-        <div class="row">
-          <div class="col-xl-6 col-lg-7" data-aos="fade-right">
-            <img src="assets/img/FTB.jpg" class="img-fluid" alt="Pengumuman Image">
-          </div>
-          <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up">Title Pengumuman</h3>
-            <p data-aos="fade-up">
-              Deskripsi Pengumuman Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-  
+<!-- ======= Pengumuman Section ======= -->
+<section id="pengumuman" class="pengumuman">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+        <img src="assets/img/pengumuman/peng_2.jpg" class="img-fluid" alt="Pengumuman Image" style="max-width: 100%;">
       </div>
-    </section><!-- End Pengumuman Section -->
+      <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
+        <div class="pengumuman-content">
+          <h3 data-aos="fade-up">Kuliah Umum oleh Konsulat Amerika Serikat terkait Suku Asli Amerika Serikat</h3>
+          <p class="tanggal" data-aos="fade-up">
+            <small>Jumat, 24 November 2023</small>
+          </p>
+          <p data-aos="fade-up">
+            Pada hari Jumat, 24 November 2023 Institut Teknologi Del menerima kunjungan dari Ibu Kristy Mordhorts (Konsulat Amerika Serikat di Medan). 
+            Kunjungan ini disambut baik oleh IT Del yang diwakili oleh Bapak Dr. Johannes Harungguan Sianipar, S.T., M.T. (Wakil Rektor I Bidang Akademik dan Kemahasiswaan). 
+            "Kami sangat senang atas kehadiran Ibu disini untuk sharing kepada mahasiswa kami, dengan partisipasi mahasiswa juga kami berharap kegiatan ini berjalan dengan baik". Ujar Beliau.
+            Pada kesempatan ini Ibu Kristy juga sebagai narasumber Kuliah Umum kepada Mahasiswa IT Del dengan topik "Native Americans in the United States" (Suku Asli Amerika Serikat). 
+            Beliau memperkenalkan bagaimana tradisi, perjuangan hingga aturan-aturan suku asli Amerika Serikat karena Beliau merupakan Suku Asli Amerika Serikat. 
+            Kuliah umum ditutup dengan sesi diskusi yang disambut aktif oleh mahasiswa IT Del.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Pengumuman Section -->
+
 
 <!-- ======= Program Pendidikan Section ======= -->
 <section id="program-pendidikan" class="program-pendidikan">
   <div class="container">
 
     <div class="section-title">
-      <h2>#Program Pendidikan</h2>
-      <p>Institut Teknologi Del memiliki 4 fakultas dengan 9 program studi. 
-      Di program studi tersebut terdapat 2 program studi Diploma 3, 1 program studi Sarjana Terapan dan 6 program studi starta 1.</p>
+      <h2>Program Pendidikan</h2>
+      <p>Institut Teknologi Del memiliki 4 fakultas dengan 9 program studi. Di program studi tersebut terdapat 2 program studi Diploma 3, 1 program studi Sarjana Terapan dan 6 program studi strata 1.</p>
     </div>
 
     <div class="row gy-4">
@@ -169,7 +194,7 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane active show" id="tab-2">
+          <div class="tab-pane" id="tab-2">
             <div class="row gy-4">
               <div class="col-lg-8 details order-2 order-lg-1">
                 <h3>Vokasi</h3>
@@ -195,43 +220,43 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane active show" id="tab-3">
+          <div class="tab-pane" id="tab-3">
             <div class="row gy-4">
-          <div class="col-lg-8 details order-2 order-lg-1">
-            <h3>FTB</h3>
-            <p class="fst-italic">Fakultas Bioteknologi</p>
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>FTB</h3>
+                <p class="fst-italic">Fakultas Bioteknologi</p>
+                
+                <div class="vision-mission">
+                    <h4>Visi:</h4>
+                    <p>Menjadikan program studi Sarjana Teknik Bioproses menjadi program studi yang unggul secara nasional dan internasional dalam bidang pendidikan, penelitian, pengembangan dan penerapan ilmu dan teknologi, serta pengabdian kepada masyarakat.</p>
+                </div>
             
-            <div class="vision-mission">
-                <h4>Visi:</h4>
-                <p>Menjadikan program studi Sarjana Teknik Bioproses menjadi program studi yang unggul secara nasional dan internasional dalam bidang pendidikan, penelitian, pengembangan dan penerapan ilmu dan teknologi, serta pengabdian kepada masyarakat.</p>
-            </div>
-        
-            <div class="vision-mission">
-                <h4>Misi:</h4>
-                <ol>
-                    <li>Menyelenggarakan dan mengembangkan proses pendidikan yang unggul, berkesinambungan dan bermanfaat bagi masyarakat.</li>
-                    <li>Mengembangkan, menciptakan, dan menyebarkan ilmu pengetahuan dan teknologi khususnya Teknik Bioproses.</li>
-                    <li>Meningkatkan peranan program studi adar mampu menjadi pembaharu dalam kemampuan, keterampilan pilihan rujukan, dan pengembangan rekayasa karya masyarakat, khususnya dalam bidang ilmu pengetahuan dan teknologi khususnya Teknik Bioproses.</li>
-                    <li>Meningkatkan peran nyata kepada masyarakat melalui penerapan tridarma perguruan tinggi.</li>
-                    <li>Menjadikan program studi Teknik Bioproses sebagai program studi yang memiliki sistem pengelolaan yang baik, efisien, dan produktif.</li>
-                </ol>
-            </div>
-
-            <div class="vision-mission">
-              <h4>Target Lulusan:</h4>
-              <ol>
-                  <li>Memiliki kompetensi mampu merancang, menganalisis, mengoperasikan, mengendalikan proses-proses di industry, dan mengevaluasi profitabilitas pendirian sistem produksi, khususnya industri yang menerapkan bioproses.</li>
-                  <li>Mampu menerapkan pengetahuannya di bidang-bidang lain yang penanganannya betumpu pada bioproses seperti: masalah limbah dan polusi lingkungan, operasi-operasi pendukung di bidang kedokteran, maupun sebagai tenaga peneliti.</li>
-                  <li>Mampu berkomunikasi yang efektif.</li>
-              </ol>
+                <div class="vision-mission">
+                    <h4>Misi:</h4>
+                    <ol>
+                        <li>Menyelenggarakan dan mengembangkan proses pendidikan yang unggul, berkesinambungan dan bermanfaat bagi masyarakat.</li>
+                        <li>Mengembangkan, menciptakan, dan menyebarkan ilmu pengetahuan dan teknologi khususnya Teknik Bioproses.</li>
+                        <li>Meningkatkan peranan program studi adar mampu menjadi pembaharu dalam kemampuan, keterampilan pilihan rujukan, dan pengembangan rekayasa karya masyarakat, khususnya dalam bidang ilmu pengetahuan dan teknologi khususnya Teknik Bioproses.</li>
+                        <li>Meningkatkan peran nyata kepada masyarakat melalui penerapan tridarma perguruan tinggi.</li>
+                        <li>Menjadikan program studi Teknik Bioproses sebagai program studi yang memiliki sistem pengelolaan yang baik, efisien, dan produktif.</li>
+                    </ol>
+                </div>
+    
+                <div class="vision-mission">
+                  <h4>Target Lulusan:</h4>
+                  <ol>
+                      <li>Memiliki kompetensi mampu merancang, menganalisis, mengoperasikan, mengendalikan proses-proses di industry, dan mengevaluasi profitabilitas pendirian sistem produksi, khususnya industri yang menerapkan bioproses.</li>
+                      <li>Mampu menerapkan pengetahuannya di bidang-bidang lain yang penanganannya betumpu pada bioproses seperti: masalah limbah dan polusi lingkungan, operasi-operasi pendukung di bidang kedokteran, maupun sebagai tenaga peneliti.</li>
+                      <li>Mampu berkomunikasi yang efektif.</li>
+                  </ol>
+              </div>
+                </div>            
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/FTB.jpg" alt="" class="img-fluid">
+              </div>
+              </div>
           </div>
-            </div>            
-            <div class="col-lg-4 text-center order-1 order-lg-2">
-            <img src="assets/img/FTB.jpg" alt="" class="img-fluid">
-          </div>
-          </div>
-          </div>
-          <div class="tab-pane active show" id="tab-4">
+          <div class="tab-pane" id="tab-4">
             <div class="row gy-4">
               <div class="col-lg-8 details order-2 order-lg-1">
                 <h3>FTI</h3>
@@ -261,36 +286,193 @@
 </section><!-- End Program Pendidikan Section -->
 
 <!-- ======= Lembaga Section ======= -->
-<section id="lembaga" class="testimonials">
+<section id="lembaga" class="lembaga">
   <div class="container">
 
-    <div class="section-title" data-aos="fade-up">
-      <h2>Lembaga Kampus</h2>
-      <p>Berikut adalah lembaga dari beberapa kampus yang telah bekerja sama dengan kami.</p>
+    <div class="section-title">
+      <h2>Lembaga</h2>
     </div>
 
-    <div class="lembaga-slider swiper" data-aos="fade-up" data-aos-delay="100">
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="lembaga-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Kami sangat puas dengan layanan dari OpenCampus. Mereka memberikan solusi yang inovatif dan mendukung berbagai kegiatan di kampus kami.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/lembaga-1.jpg" class="lembaga-img" alt="">
-            <h3>Nama Dekan</h3>
-            <h4>Fakultas Teknik</h4>
-          </div>
-        </div><!-- End lembaga item -->
-
+    <div class="row gy-4">
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Pembina Yayasan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Rektor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Dekan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Mitra Kerjasama</a>
+          </li>
+        </ul>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="col-lg-9">
+        <div class="tab-content">
+
+          <!-- Pembina Yayasan Tab -->
+          <div class="tab-pane fade show active" id="tab-1">
+          <div class="row gy-4">
+            <div class="col-lg-8 details order-2 order-lg-1">
+            <h3>Pembina Yayasan</h3>
+            <p>Luhut Binsar Pandjaitan</p>
+            <p>Lahir: 28 September 1947</p>
+            <p>Istri: Devi Simatupang</p>
+            <p>Orang Tua: Bonar Panjaitan, Siti Frida Naiborhu</p>
+            <p>Anak: Paulina Pandjaitan, David Panjaitan, Paulus Panjaitan, Kerri Na Basaria</p>
+            <p>Education: George Washington University, Indonesian Military Academy, National Defense University</p>
+            <div class="col-lg-4 text-center order-1 order-lg-2">
+            <img src="assets/img/lembaga/ketua.jpg" alt="Pembina Yayasan Image">
+          </div>
+          </div>
+
+          <!-- Rektor Tab -->
+          <div class="tab-pane fade" id="tab-2">
+            <h3>Rektor</h3>
+            <p>Dr. Arnaldo Marulitua Sinaga, S.T, M.InfoTech</p>
+            <p>Jabatan: Dosen</p>
+            <p>Email: aldo@del.ac.id</p>
+            <p>PENDIDIKAN:</p>
+            <p>S1 Teknik Informatika, Institut Teknologi Bandung</p>
+            <p>S2 Information and Communication, University of Wollongong, Australia</p>
+            <p>S3 Information Technology and Computer Science, University of Wollongong, Australia</p>
+            <div class="col-lg-4 text-center order-1 order-lg-2">
+            <img src="assets/img/lembaga/rektor.jpg" alt="Rektor Image">
+          </div>
+          </div>
+
+          <!-- Dekan Tab -->
+          <div class="tab-pane fade" id="tab-3">
+            <h3>Dekan</h3>
+            <div class="dekan-info">
+              <img src="assets/img/lembaga/dekan_fite.jpg" alt="Dekan Image 1">
+              <p>Indra Hartarto Tambunan, ST., M.S.,Ph.D</p>
+              <p>Jabatan: Dekan Fakultas Informatika dan Teknik Elektro</p>
+              <p>Email: indra.tambunan@del.ac.id</p>
+              <p>Latar Belakang Pendidikan:</p>
+              <p>S1 Teknik Elektro Institut Teknologi Bandung</p>
+              <p>S2 Konhuk Univ.Seoul Aerospce Informatic Engneering</p>
+              <p>S3 Konhuk Univ.Seoul Aerospce Informatic Engneering</p>
+            </div>
+            <div class="dekan-info">
+              <img src="assets/img/lembaga/dekan_vokasi.jpg" alt="Dekan Image 2">
+              <p>Riyanthi Angrainy Sianturi, S.Sos, M.Ds</p>
+              <p>Jabatan: Dekan Fakultas Vokasi</p>
+              <p>Program Studi: Sarjana Terapan Teknologi Rekayasa Perangkat Lunak</p>
+              <p>Email: riyanthi@del.ac.id</p>
+              <p>Latar Belakang Pendidikan:</p>
+              <p>Institut Teknologi Bandung, Magister Desain, 2015
+                Desain Komunikasi Visual, Desitination Branding</p>
+              <p>Universitas Sumatera Utara, Sarjana Komunikasi, 2010
+                Komunikasi, Fotografi</p>
+              <p>Politeknik Informatika Del, Diploma Sistem Informasi, 2006
+                Software Engineering, Web App</p>
+            </div>
+            <div class="dekan-info">
+              <img src="assets/img/lembaga/dekan_ftb.jpg" alt="Dekan Image 3">
+              <p>Dr. Merry Meryam Martgrita, S.Si., M.Si.</p>
+              <p>Jabatan: Dekan dan Dosen di Fakultas Bioteknologi</p>
+              <p>Email: merry.martgrita@del.ac.id, merrymartgrita@gmail.com</p>
+              <p>Latar Belakang Pendidikan:</p>
+              <p>S1 Biologi Perkembangan (MIPA-Institut Teknologi Bandung)</p>
+              <p>S2 Biologi Perkembangan (Institut Teknologi Bandung)</p>
+              <p>S3 Biomedik (Institut Teknologi Bandung)</p>
+            </div>
+            <div class="dekan-info">
+              <img src="assets/img/lembaga/dekan_fti.jpg" alt="Dekan Image 4">
+              <p>Dr. Fitriani Tupa Ronauli Silalahi, S.Si, M.Si</p>
+              <p>Jabatan: Dekan Fakultas Teknologi Industri</p>
+              <p>Email: fitri.silalahi@del.ac.id, fitrianitupa@gmail.com</p>
+              <p>Latar Belakang Pendidikan:</p>
+              <p>S1 Universitas Negeri Medan (2011)</p>
+              <p>S2 Matematika ITB (2014)</p>
+              <p>S3 ITB (2021)</p>
+            </div>
+          </div>
+
+          <!-- Mitra Kerjasama Tab -->
+          <div class="tab-pane fade" id="tab-4">
+            <h3>Mitra Kerjasama</h3>
+            <p>Tahun 2014</p>
+            <ul>
+              <li>Universitas Pelita Harapan</li>
+              <li>Dekan Fakultas Sains dan Teknologi Universitas Pelita Harapan</li>
+              <li>PT.Lifelong Learning</li>
+              <li>Univeristas Sumatera Utara</li>
+            </ul>
+            <p>Tahun 2015</p>
+            <ul>
+              <li>Universitas Pelita Harapan</li>
+              <li>Dekan Fakultas Sains dan Teknologi Universitas Pelita Harapan</li>
+              <li>PT.Lifelong Learning</li>
+              <li>Univeristas Sumatera Utara</li>
+            </ul>
+            <p>Tahun 2016</p>
+            <ul>
+              <li>Mirum Agency</li>
+              <li>Pemerintah Kabupaten Tolikara</li>
+              <li>PT Medan Inovasi Bersama</li>
+            </ul>
+            <p>Tahun 2017</p>
+            <ul>
+              <li>Universitas Pelita Harapan Medan</li>
+              <li>Sekolah Tinggi Keguruan dan Ilmu Pendidikan(STIKIP) SoE</li>
+              <li>Universitas Kristen Maranatha</li>
+              <li>Universitas Kristen Petra</li>
+              <li>Universitas Methodist Indonesia</li>
+              <li>Universitas Kristen Indonesia Tomohon (UKIT)</li>
+              <li>Universitas Kristen Indonesia (UKI) -Toraja</li>
+              <li>Akper RS PGI - Cikini</li>
+              <li>Sekolah Tinggi Ilmu Ekonomi(STIE) Triatma Mulya</li>
+              <li>Universitas Kristen Palangkaraya (UNKRIP)</li>
+              <li>Universitas Tribuana Kalabahi</li>
+              <li>Universitas Kristen Indonesia (UKI) - Paulus</li>
+              <li>Universitas Ottow Geissler (UOG) Papua</li>
+              <li>Universitas Kristen Immanuel</li>
+              <li>Universitas Halmahera</li>
+              <li>Universitas Kristen Tentena</li>
+              <li>Universitas Kristen Artha Wacana (UKAW) - Kupang</li>
+              <li>Universitas Kristen Wira Wacana</li>
+              <li>Universitas Kristen Indonesia (UKI) Maluku</li>
+              <li>Badan Otorita Danau Toba</li>
+              <li>Badan Koordinasi Pendidikan Bahasa Mandarin Jawa Barat</li>
+              <li>Yayasan Pusat Inspirator dan Pemberdayaan Pemuda Indonesia (PIPPI)</li>
+              <li>1945 Institute</li>
+              <li>SMK Negeri 1 Pagaran</li>
+              <li>Kementerian Koordinator Bidang Kemaritiman</li>
+              <li>PT. Metrodata Electronics, Tbk</li>
+              <li>Pemerintah Kabupaten Toba Samosir</li>
+              <li>Akademik Farmasi Yayasan Tenaga Pembangunan Arjuna</li>
+            </ul>
+            <p>Tahun 2018</p>
+            <ul>
+              <li>Punguan Parsadaan Guru Ni laingan Siregar Se-Indonesia</li>
+              <li>Universitas Esa Unggul</li>
+              <li>Hutahaean</li>
+              <li>Pemerintah Kabupaten Humbang Hasundutan</li>
+              <li>Pemerintah Kabupaten Toba Samosir</li>
+              <li>Pemerintah Kabupaten Toba Samosir</li>
+              <li>SMA/SMK Kristen Kalam Kudus Medan</li>
+              <li>Yayasan Kalam Kudus Indonesia Cabang Medan</li>
+              <li>PT Asuransi Sinar Mas</li>
+              <li>PT. Kalibrr teknologi Personalia</li>
+              <li>Rumah Sakit Umum Daerah Dolok Sanggul</li>
+              <li>Universitas Budi Luhur</li>
+              <li>Badan Kerjasama Perguruan Tinggi Kristen Indonesia</li>
+              <li>Pemerintah Kabupaten Toba Samosir</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
     </div>
 
   </div>
 </section><!-- End Lembaga Section -->
+
 
 <!-- ======= Fasilitas Section ======= -->
 <section id="fasilitas" class="fasilitas section-bg">
@@ -303,8 +485,9 @@
     <div class="row" data-aos="fade-up">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="fasilitas-flters">
-          <li data-filter="*" class="filter-active">Lab & Kelas</li>
-          <li data-filter=".filter-app">Akomodasi</li>
+          <li data-filter="*" class="filter-active">Semua</li>
+          <li data-filter=".filter-app">Lab & Kelas</li>
+          <li data-filter=".filter-web">Akomodasi</li>
           <li data-filter=".filter-card">Kantin</li>
           <li data-filter=".filter-web">Perpustakaan</li>
           <li data-filter=".filter-web">Hiburan & Olahraga</li>
@@ -316,12 +499,15 @@
 
     <div class="row fasilitas-container" data-aos="fade-up">
 
+      <!-- Lab & Kelas -->
       <div class="col-lg-4 col-md-6 fasilitas-item filter-app">
         <div class="fasilitas-wrap">
+          <!-- Gambar Lab & Kelas -->
           <img src="assets/img/fasilitas/Lab.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Laboratorium Komputer</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/Lab.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Laboratorium Komputer Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -329,25 +515,15 @@
         </div>
       </div>
 
+      <!-- Akomodasi -->
       <div class="col-lg-4 col-md-6 fasilitas-item filter-web">
         <div class="fasilitas-wrap">
-          <img src="assets/img/fasilitas/Lab.jpg" class="img-fluid" alt="">
-          <div class="fasilitas-info">
-            <h4>Laboratorium Bahasa</h4>
-            <div class="fasilitas-links">
-              <a href="assets/img/fasilitas/Lab.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Laboratorium Bahasa Institut Teknologi Del"><i class="bx bx-plus"></i></a>
-              <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 fasilitas-item filter-app">
-        <div class="fasilitas-wrap">
+          <!-- Gambar Akomodasi -->
           <img src="assets/img/fasilitas/akomodasi.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Akomodasi</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/akomodasi.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Akomodasi Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -355,12 +531,15 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fasilitas-item filter-web">
+      <!-- Kantin -->
+      <div class="col-lg-4 col-md-6 fasilitas-item filter-card">
         <div class="fasilitas-wrap">
+          <!-- Gambar Kantin -->
           <img src="assets/img/fasilitas/kantin.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Kantin</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/kantin.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Kantin Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -368,12 +547,15 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fasilitas-item filter-web">
+      <!-- Perpustakaan -->
+      <div class="col-lg-4 col-md-6 fasilitas-item filter-card">
         <div class="fasilitas-wrap">
+          <!-- Gambar Perpustakaan -->
           <img src="assets/img/fasilitas/perpustakaan.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Perpustakaan</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/perpustakaan.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Perpustakaan Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -381,12 +563,15 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fasilitas-item filter-app">
+      <!-- Hiburan & Olahraga -->
+      <div class="col-lg-4 col-md-6 fasilitas-item filter-card">
         <div class="fasilitas-wrap">
+          <!-- Gambar Hiburan & Olahraga -->
           <img src="assets/img/fasilitas/hiburan.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Hiburan & Olahraga</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/hiburan.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Hiburan & Olahraga Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -394,12 +579,15 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fasilitas-item filter-web">
+      <!-- Ruang Terbuka -->
+      <div class="col-lg-4 col-md-6 fasilitas-item filter-card">
         <div class="fasilitas-wrap">
+          <!-- Gambar Ruang Terbuka -->
           <img src="assets/img/fasilitas/ruang_terbuka.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Ruang Terbuka</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/ruang_terbuka.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Ruang Terbuka Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -407,12 +595,15 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 fasilitas-item filter-app">
+      <!-- Klinik -->
+      <div class="col-lg-4 col-md-6 fasilitas-item filter-card">
         <div class="fasilitas-wrap">
+          <!-- Gambar Klinik -->
           <img src="assets/img/fasilitas/klinik.jpg" class="img-fluid" alt="">
           <div class="fasilitas-info">
             <h4>Klinik</h4>
             <div class="fasilitas-links">
+              <!-- Lightbox dan More Details -->
               <a href="assets/img/fasilitas/klinik.jpg" data-gallery="fasilitasGallery" class="fasilitas-lightbox" title="Klinik Institut Teknologi Del"><i class="bx bx-plus"></i></a>
               <a href="fasilitas-details.html" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -421,10 +612,8 @@
       </div>
 
     </div>
-
   </div>
-</section><!-- End Lembaga Section -->
-
+</section><!-- End Fasilitas Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -461,36 +650,7 @@
           </div>
 
           <div class="col-lg-5 d-flex align-items-stretch">
-            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.co.id/maps/place/Institut+Teknologi+Del/@2.3832206,99.1460579,17z/data=!3m1!4b1!4m6!3m5!1s0x302e00fdad2d7341:0xf59ef99c591fe451!8m2!3d2.3832152!4d99.1486328!16s%2Fg%2F12148s15?entry=ttu" frameborder="0" allowfullscreen></iframe>
-          </div>
-
-        </div>
-
-        <div class="row mt-5 justify-content-center" data-aos="fade-up">
-          <div class="col-lg-10">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.14766528018802!2d99.15178104283125!3d2.3848382068495235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e00fdad2d7341%3A0xf59ef99c591fe451!2sInstitut%20Teknologi%20Del!5e0!3m2!1sid!2sid!4v1701698143906!5m2!1sid!2sid" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>          
 
         </div>
 
@@ -560,6 +720,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Mn538LBCme8AX1O1GGk6pZZpXA7l9l+SM9F/p1bRdd6Qfa6zFbJO7bKJ66Ipg2Gr" crossorigin="anonymous"></script>
 
   <script src="assets/js/main.js"></script>
 
