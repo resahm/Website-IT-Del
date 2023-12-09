@@ -830,30 +830,6 @@ img {
   margin-bottom: 30px;
 }
 
-/* Style untuk filter Fasilitas */
-#fasilitas-flters {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-#fasilitas-flters li {
-  display: inline-block;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: #007bff;
-  color: #fff;
-  transition: 0.3s;
-}
-
-#fasilitas-flters li:hover,
-#fasilitas-flters li.filter-active {
-  background: #0056b3;
-}
-
 /* Style untuk container fasilitas */
 .fasilitas-container {
   display: flex;
@@ -867,11 +843,11 @@ img {
   overflow: hidden;
 }
 
+/* Style untuk gambar fasilitas */
 .fasilitas-wrap {
   position: relative;
 }
 
-/* Style untuk gambar fasilitas */
 .fasilitas-wrap img {
   width: 100%;
   height: auto;
@@ -914,10 +890,6 @@ img {
   color: #fff;
   margin: 0 10px;
   transition: 0.3s;
-}
-
-.fasilitas-links a:hover {
-  color: #0056b3;
 }
 
 /*--------------------------------------------------------------
